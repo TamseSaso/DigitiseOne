@@ -41,7 +41,7 @@ const FeaturesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Why Choose PixelFlow?
+            Why Choose TechFlow?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We combine cutting-edge technology with deep industry expertise to deliver solutions that transform how you do business.
@@ -50,8 +50,8 @@ const FeaturesSection = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="feature-card bg-white/10 backdrop-blur-sm border-white/20 p-6 hover:bg-white/20 transition-all duration-300">
-              <feature.icon className="h-12 w-12 text-purple-400 mb-4" />
+            <Card key={index} className="feature-card bg-slate-800/50 backdrop-blur-sm border-slate-700/50 p-6 hover:bg-slate-700/50 transition-all duration-300">
+              <feature.icon className="h-12 w-12 text-emerald-400 mb-4" />
               <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
               <p className="text-gray-300 leading-relaxed">{feature.description}</p>
             </Card>

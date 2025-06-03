@@ -56,7 +56,7 @@ const PhoneDemo = () => {
   return (
     <div ref={phoneRef} className="relative flex justify-center">
       {/* Phone glow effect */}
-      <div className="phone-glow absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-[3rem] blur-xl opacity-50"></div>
+      <div className="phone-glow absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-[3rem] blur-xl opacity-50"></div>
       
       {/* Phone container */}
       <div className="relative bg-black rounded-[3rem] p-2 shadow-2xl">
@@ -84,7 +84,7 @@ const PhoneDemo = () => {
             </div>
 
             {/* Points display */}
-            <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-6 mb-6 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-6 mb-6 text-white relative overflow-hidden">
               <div className="floating-reward absolute top-2 right-2">
                 <Crown className="h-6 w-6 text-yellow-300" />
               </div>
@@ -100,17 +100,17 @@ const PhoneDemo = () => {
             <div className="bg-white rounded-xl p-4 mb-6 shadow-lg border">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-semibold text-gray-900">Progress to Free Coffee</span>
-                <Gift className="h-5 w-5 text-purple-600" />
+                <Gift className="h-5 w-5 text-emerald-600" />
               </div>
               <div className="flex items-center space-x-2 mb-2">
                 {[...Array(10)].map((_, i) => (
-                  <div key={i} className={`coffee-point w-6 h-6 rounded-full flex items-center justify-center ${i < 7 ? 'bg-amber-500' : 'bg-gray-200'}`}>
+                  <div key={i} className={`coffee-point w-6 h-6 rounded-full flex items-center justify-center ${i < 7 ? 'bg-emerald-500' : 'bg-gray-200'}`}>
                     <Coffee className={`h-3 w-3 ${i < 7 ? 'text-white' : 'text-gray-400'}`} />
                   </div>
                 ))}
               </div>
               <div className="bg-gray-200 rounded-full h-2 mb-2">
-                <div className="progress-fill bg-gradient-to-r from-amber-500 to-orange-500 h-2 rounded-full w-0"></div>
+                <div className="progress-fill bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full w-0"></div>
               </div>
               <p className="text-sm text-gray-600">3 more coffees until your next free one!</p>
             </div>
@@ -137,12 +137,12 @@ const PhoneDemo = () => {
 
             {/* Floating rewards */}
             <div className="floating-reward absolute top-20 left-4">
-              <div className="bg-purple-500 text-white rounded-full p-2 shadow-lg">
+              <div className="bg-emerald-500 text-white rounded-full p-2 shadow-lg">
                 <Gift className="h-4 w-4" />
               </div>
             </div>
             <div className="floating-reward absolute top-32 right-6">
-              <div className="bg-green-500 text-white rounded-full p-2 shadow-lg">
+              <div className="bg-teal-500 text-white rounded-full p-2 shadow-lg">
                 <Star className="h-4 w-4" />
               </div>
             </div>

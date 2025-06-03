@@ -3,12 +3,11 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { ArrowRight, Coffee, Gift, Star, Zap, Smartphone, Users, TrendingUp } from 'lucide-react';
-import PhoneDemo from '@/components/PhoneDemo';
+import { ArrowRight } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import StatsSection from '@/components/StatsSection';
+import ContactSection from '@/components/ContactSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -76,12 +75,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
+    <div ref={containerRef} className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       {/* Background animated elements */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="floating-element absolute top-20 left-10 w-20 h-20 bg-purple-500/20 rounded-full blur-xl"></div>
-        <div className="floating-element absolute top-40 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
-        <div className="floating-element absolute bottom-20 left-1/4 w-24 h-24 bg-indigo-500/20 rounded-full blur-xl"></div>
+        <div className="floating-element absolute top-20 left-10 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl"></div>
+        <div className="floating-element absolute top-40 right-20 w-32 h-32 bg-teal-500/10 rounded-full blur-xl"></div>
+        <div className="floating-element absolute bottom-20 left-1/4 w-24 h-24 bg-slate-500/10 rounded-full blur-xl"></div>
       </div>
 
       <HeroSection />
@@ -95,30 +94,32 @@ const Index = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of businesses that have already revolutionized their operations with PixelFlow Automation.
+            Join thousands of businesses that have already revolutionized their operations with TechFlow Solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 text-lg">
               Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 text-lg">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg">
               Schedule Demo
             </Button>
           </div>
         </div>
       </section>
 
+      <ContactSection />
+
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700/50">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-2xl font-bold text-white mb-4">PixelFlow Automation</div>
+          <div className="text-2xl font-bold text-white mb-4">TechFlow Solutions</div>
           <p className="text-gray-400 mb-6">Transforming businesses through intelligent automation and digitalization</p>
           <div className="flex justify-center space-x-6 text-gray-400">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
             <a href="#" className="hover:text-white transition-colors">Contact</a>
           </div>
-          <p className="text-gray-500 text-sm mt-6">© 2024 PixelFlow Automation. All rights reserved.</p>
+          <p className="text-gray-500 text-sm mt-6">© 2024 TechFlow Solutions. All rights reserved.</p>
         </div>
       </footer>
     </div>
