@@ -1,8 +1,22 @@
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap, Play, Pause } from 'lucide-react';
 import PhoneDemo from './PhoneDemo';
+
 const HeroSection = () => {
-  return <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8">
+  const [isDemoPlaying, setIsDemoPlaying] = useState(false);
+
+  const handleWatchDemo = () => {
+    setIsDemoPlaying(true);
+  };
+
+  const handleDemoEnd = () => {
+    setIsDemoPlaying(false);
+  };
+
+  return (
+    <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="hero-content">
@@ -24,16 +38,34 @@ const HeroSection = () => {
               <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 text-lg">
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-4 text-lg text-slate-950">
-                Watch Demo
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white hover:bg-white px-8 py-4 text-lg text-white hover:text-slate-950"
+                onClick={handleWatchDemo}
+                disabled={isDemoPlaying}
+              >
+                {isDemoPlaying ? (
+                  <>
+                    <Pause className="mr-2 h-5 w-5" />
+                    Playing Demo
+                  </>
+                ) : (
+                  <>
+                    <Play className="mr-2 h-5 w-5" />
+                    Watch Demo
+                  </>
+                )}
               </Button>
             </div>
           </div>
           <div className="phone-container relative">
-            <PhoneDemo />
+            <PhoneDemo isPlaying={isDemoPlaying} onDemoEnd={handleDemoEnd} />
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
