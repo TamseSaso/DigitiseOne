@@ -162,7 +162,7 @@ const Index = () => {
             <div className="hero-content">
               <div className="flex items-center space-x-2 mb-6">
                 <Zap className="h-8 w-8 text-emerald-400" />
-                <span className="text-emerald-400 font-semibold text-lg">TechFlow Solutions</span>
+                <span className="text-emerald-400 font-semibold text-lg">Digitiseone Solutions</span>
               </div>
               <h1 className="hero-content text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
                 Automate.<br />
@@ -204,7 +204,7 @@ const Index = () => {
                 Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-lg">
-                Join thousands of businesses that have already revolutionized their operations with TechFlow Solutions.
+                Join thousands of businesses that have already revolutionized their operations with Digitiseone Solutions.
               </p>
               <div className="flex">
                 <Button
@@ -231,7 +231,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700/50 bg-gradient-to-br from-slate-900 to-teal-900">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-2xl font-bold text-white mb-4">TechFlow Solutions</div>
+          <div className="text-2xl font-bold text-white mb-4">Digitiseone Solutions</div>
           <p className="text-gray-400 mb-6">Transforming businesses through intelligent automation and digitalization</p>
           <div className="flex justify-center space-x-6 text-gray-400">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>

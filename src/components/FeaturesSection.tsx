@@ -63,9 +63,7 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-end space-y-16">
           <div className="text-right max-w-2xl">
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8">
-              Why Choose TechFlow?
-            </h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8">Why Choose Digitiseone?</h2>
             <div className="space-y-4">
               <p className="text-2xl md:text-3xl text-emerald-400 font-medium tracking-wide">
                 Easy to scan, easier to earn rewards

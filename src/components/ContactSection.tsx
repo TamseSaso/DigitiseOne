@@ -31,7 +31,7 @@ const ContactSection = () => {
             Get in Touch
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your business? Let's discuss how TechFlow Solutions can help you achieve your goals.
+            Ready to transform your business? Let's discuss how Digitiseone Solutions can help you achieve your goals.
           </p>
         </div>
         
@@ -105,7 +105,7 @@ const ContactSection = () => {
             {/* CTA Card - MOVED HERE (AGAIN) */}
             <Card className="bg-slate-700/50 border-slate-600 p-6">
               <h4 className="text-xl font-semibold text-white mb-3">Ready to get started?</h4>
-              <p className="text-gray-300 mb-4">Contact us to discuss your automation needs and how TechFlow Solutions can help you achieve your goals.</p>
+              <p className="text-gray-300 mb-4">Contact us to discuss your automation needs and how Digitiseone Solutions can help you achieve your goals.</p>
             </Card>
 
             {/* Contact Information - NOW SECOND (AGAIN) */}
