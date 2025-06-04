@@ -13,15 +13,36 @@ const ContactSection = () => {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Contact from ${firstName} ${lastName}`;
-    const body = encodeURIComponent(
-      `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
-    );
-    window.location.href = `mailto:saso.tamse@ulicanori.si?subject=${encodeURIComponent(
-      subject
-    )}&body=${body}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          company,
+          message,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      // Optionally clear form fields on success:
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setCompany('');
+      setMessage('');
+      alert('Your message has been sent successfully.');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('There was an error sending your message. Please try again later.');
+    }
   };
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-br from-slate-900 to-teal-900">
@@ -35,70 +56,7 @@ const ContactSection = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700/50 p-8">
-            <h3 className="text-2xl font-semibold text-white mb-6">Send us a message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName" className="text-gray-300">First Name</Label>
-                  <Input
-                    id="firstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="John"
-                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-emerald-500"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="text-gray-300">Last Name</Label>
-                  <Input
-                    id="lastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    placeholder="Doe"
-                    className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-emerald-500"
-                  />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="email" className="text-gray-300">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="john@example.com"
-                  className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-emerald-500"
-                />
-              </div>
-              <div>
-                <Label htmlFor="company" className="text-gray-300">Company</Label>
-                <Input
-                  id="company"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  placeholder="Your Company"
-                  className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-emerald-500"
-                />
-              </div>
-              <div>
-                <Label htmlFor="message" className="text-gray-300">Message</Label>
-                <Textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell us about your project..."
-                  rows={4}
-                  className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-emerald-500"
-                />
-              </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white">
-                Send Message
-              </Button>
-            </form>
-          </Card>
+        <div className="flex flex-col items-center space-y-12">
 
           {/* Contact Information and CTA Card container */}
           <div className="space-y-8">

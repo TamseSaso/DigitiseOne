@@ -238,7 +238,7 @@ const Index = () => {
             <a href="#" className="hover:text-white transition-colors">Terms</a>
             <a href="#" className="hover:text-white transition-colors">Contact</a>
           </div>
-          <p className="text-gray-500 text-sm mt-6">© 2024 TechFlow Solutions. All rights reserved.</p>
+          <p className="text-gray-500 text-sm mt-6">© 2025 Digitiseone Solutions. All rights reserved.</p>
         </div>
       </footer>
     </div>
